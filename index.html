@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentina Alanis | Página Oficial</title>
+
+  <!-- SEO (para que aparezca en el buscador) -->
+  <meta name="description" content="Sitio web oficial de Valentina Alanis. Conocé su blog, portfolio, colaboraciones, tienda y más.">
+  <meta name="keywords" content="Valentina Alanis, portfolio, blog, colaboraciones, tienda, contacto">
+  <meta name="author" content="Valentina Alanis">
+
+  <style>
+    /* Fondo animado con degradado en movimiento y partículas */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      animation: entrada 1.2s ease-in-out;
+    }
+
+    /* Fondo degradado dinámico */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 20% 20%, #ff96c7, transparent 40%),
+                  radial-gradient(circle at 80% 30%, #a293ff, transparent 40%),
+                  radial-gradient(circle at 50% 80%, #ffd88b, transparent 50%);
+      animation: moverFondo 12s linear infinite;
+      z-index: -2;
+    }
+
+    @keyframes moverFondo {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-25%, -25%) scale(1.2); }
+      100% { transform: translate(0, 0) scale(1); }
+    }
+
+    /* Efecto de partículas luminosas */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: repeating-radial-gradient(circle, rgba(255,255,255,0.3) 0 1px, transparent 2px 40px);
+      animation: brillar 4s infinite linear;
+      z-index: -1;
+    }
+
+    @keyframes brillar {
+      from { transform: translateY(0); opacity: 0.8; }
+      50% { transform: translateY(-10px); opacity: 0.5; }
+      to { transform: translateY(0); opacity: 0.8; }
+    }
+
+    /* Animación de entrada */
+    @keyframes entrada {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Animación de salida suave (si se va a otra página) */
+    @keyframes salida {
+      from { opacity: 1; transform: scale(1); }
+      to { opacity: 0; transform: scale(0.95); }
+    }
+
+    /* Reutilizamos tu estilo original */
+    h1 {
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      animation: aparecer 2s ease;
+    }
+
+    @keyframes aparecer {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .contenedor {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 20px;
+      align-items: center;
+      background-color: rgba(255,255,255,0.25);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      backdrop-filter: blur(6px);
+      animation: aparecer 2s ease;
+    }
+
+    .foto {
+      width: 200px;
+      height: 200px;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .foto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .foto img:hover {
+      transform: scale(1.1);
+    }
+
+    .nombre {
+      grid-column: 1 / 2;
+      background-color: #a4e5a2;
+      color: #1a1a1a;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    .botones {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .boton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+      border-radius: 10px;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .boton:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .colaboraciones { background-color: #f8a9b8; color: #611326; }
+    .blog { background-color: #9ae69a; color: #173417; }
+    .portfolio { background-color: #6b5be3; }
+    .sobre { background-color: #fcbdd1; color: #611326; }
+    .tienda { background-color: #fda4a4; color: #611326; }
+    .contacto { background-color: #4836db; }
+
+    @media (max-width: 700px) {
+      .contenedor {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .botones {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Bienvenidos a Editopolaimpre</h1>
+
+  <div class="contenedor">
+    <div class="foto">
+      <img src="60d60f58ad26652ba0e15ecd479722ce_0.jpeg" alt="Foto de Valentina Alanis">
+    </div>
+
+    <div class="botones">
+      <a href="colaboraciones.html" class="boton colaboraciones">Colaboraciones</a>
+      <a href="blog.html" class="boton blog">Blog</a>
+      <a href="portfolio.html" class="boton portfolio">Portfolio</a>
+      <a href="sobre.html" class="boton sobre">Sobre mí</a>
+      <a href="tienda.html" class="boton tienda">Mi tienda</a>
+      <a href="contacto.html" class="boton contacto">Contacto</a>
+    </div>
+
+    <div class="nombre">Valentina Alanis</div>
+  </div>
+
+  <script>
+    // Suaviza la salida cuando el usuario cambia de página
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        document.body.style.animation = 'salida 0.8s ease forwards';
+        setTimeout(() => window.location = link.href, 700);
+      });
+    });
+  </script>
+
+</body>
+</html>
